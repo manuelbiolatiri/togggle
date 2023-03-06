@@ -1,0 +1,21 @@
+# Node files #
+node_modules/
+.scannerwork
+npm-debug.log
+yarn-error.log
+.env*
+!.env.example
+.env.test
+
+# OS generated files #
+.DS_Store
+Thumbs.db
+.tmp/
+src/api/schema.gql
+
+# Typing #
+# typings/
+
+# Dist #
+dist
+tsconfig.build.json
