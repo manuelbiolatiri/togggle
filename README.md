@@ -57,7 +57,7 @@ POST /books
 | title       | String | true     | 
 | description | String | true     |
 | author      | String | true     |
-| year        | String | true     |
+| year        | Number | true     |
 | cover       | String | false    |
 
 #### Update Book
@@ -75,7 +75,7 @@ PUT /books/:id
 | title       | String | false    | 
 | description | String | false    |
 | author      | String | false    |
-| year        | String | false    |
+| year        | Number | false    |
 | cover       | String | false    |
 | version     | String | true     |
 
