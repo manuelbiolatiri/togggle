@@ -25,8 +25,6 @@ import { MongooseModule } from "@nestjs/mongoose";
     MongooseModule.forRoot(config().DB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
     }),
     AuthModule,
     UserModule,

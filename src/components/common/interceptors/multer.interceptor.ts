@@ -1,6 +1,6 @@
 import { extname, join } from "path";
 import { diskStorage } from "multer";
-import { nanoid } from "nanoid";
+import { v4 as uuidv4 } from "uuid";
 import { existsSync, mkdirSync } from "fs";
 
 export const multerOptions = {
@@ -15,6 +15,6 @@ export const multerOptions = {
       cb(null, uploadPath);
     },
     filename: (req: any, file: any, cb: any) =>
-      cb(null, `${nanoid()}${extname(file.originalname)}`),
+      cb(null, `${uuidv4()}${extname(file.originalname)}`),
   }),
 };

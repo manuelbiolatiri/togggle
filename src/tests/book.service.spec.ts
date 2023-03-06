@@ -11,14 +11,13 @@ import { getModelToken } from "@nestjs/mongoose";
 
 let mongod: MongoMemoryServer;
 let mongoConnection: Connection;
-let bookModel: Model<Document<Book>>;
+let bookModel: Model<Book>;
 let bookService: BookService;
 
 beforeAll(async () => {
   mongod = await MongoMemoryServer.create();
   const uri = mongod.getUri();
-  mongoConnection = (await connect(uri, { useUnifiedTopology: true }))
-    .connection;
+  mongoConnection = (await connect(uri)).connection;
 
   bookModel = mongoConnection.model(Book.name, BookSchema);
 

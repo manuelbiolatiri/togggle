@@ -2,6 +2,7 @@ import {
   IsNotEmpty,
   IsNumber,
   IsOptional,
+  IsString,
   IsUrl,
   Max,
   Validate,
@@ -15,14 +16,17 @@ import {
 
 export class CreateBookDto {
   @IsNotEmpty()
+  @IsString()
   @Validate(TitleValidator)
   title: string;
 
   @IsNotEmpty()
+  @IsString()
   @Validate(DescriptionValidator)
   description: string;
 
   @IsNotEmpty()
+  @IsString()
   @Validate(AuthorValidator)
   author: string;
 

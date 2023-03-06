@@ -5,7 +5,7 @@ import {
 } from "@nestjs/common";
 import { v2 } from "cloudinary";
 import { unlinkSync } from "fs";
-import { nanoid } from "nanoid";
+import { v4 as uuidv4 } from "uuid";
 import { extname } from "path";
 import { promisify } from "util";
 import { IUploadFIle } from "../common/interfaces";
@@ -32,7 +32,7 @@ export class FileService {
     }
 
     try {
-      const public_id = nanoid() + extname(file.originalname);
+      const public_id = uuidv4() + extname(file.originalname);
       const secureUrl = await (
         await cloudinaryUploadPromise(file.path, {
           resource_type: "raw",

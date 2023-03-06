@@ -15,14 +15,17 @@ import {
 
 export class UpdateBookDto {
   @IsOptional()
+  @IsString()
   @Validate(TitleValidator)
   title: string;
 
   @IsOptional()
+  @IsString()
   @Validate(DescriptionValidator)
   description: string;
 
   @IsOptional()
+  @IsString()
   @Validate(AuthorValidator)
   author: string;
 

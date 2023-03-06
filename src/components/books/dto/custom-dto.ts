@@ -1,4 +1,5 @@
 import {
+  ValidationArguments,
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from "class-validator";
@@ -6,6 +7,8 @@ import {
 @ValidatorConstraint()
 export class FourLengthValidator implements ValidatorConstraintInterface {
   async validate(value: number) {
+    if (!value) return false;
+
     if (String(value).length !== 4) {
       return false;
     }
@@ -21,6 +24,8 @@ export class FourLengthValidator implements ValidatorConstraintInterface {
 @ValidatorConstraint()
 export class TitleValidator implements ValidatorConstraintInterface {
   async validate(value: string) {
+    if (!value) return false;
+
     if (value.length > 255) {
       return false;
     }
@@ -36,6 +41,8 @@ export class TitleValidator implements ValidatorConstraintInterface {
 @ValidatorConstraint()
 export class AuthorValidator implements ValidatorConstraintInterface {
   async validate(value: string) {
+    if (!value) return false;
+
     if (value.length > 255) {
       return false;
     }
@@ -51,6 +58,8 @@ export class AuthorValidator implements ValidatorConstraintInterface {
 @ValidatorConstraint()
 export class DescriptionValidator implements ValidatorConstraintInterface {
   async validate(value: string) {
+    if (!value) return false;
+
     if (value.length > 2000) {
       return false;
     }
